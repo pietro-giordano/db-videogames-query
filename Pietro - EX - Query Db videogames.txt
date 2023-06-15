@@ -80,6 +80,7 @@ JOIN
 -- SELECT `award_videogame`.*, `software_houses`.`name` as software_house FROM `award_videogame` JOIN `videogames` ON `award_videogame`.`videogame_id` = `videogames`.`id` JOIN `software_houses` ON `videogames`.`software_house_id` = `software_houses`.`id`;
 
 6- Selezionare categorie e classificazioni PEGI dei videogiochi che hanno ricevuto recensioni da 4 e 5 stelle, mostrandole una sola volta (3363)
+NON FUNZIONANTE
 -- SELECT DISTINCT `videogames`.`name` as videogame, `pegi_labels`.`name` as pegi_label, `categories`.`name` as category FROM `categories` JOIN `category_videogame` ON `categories`.`id` = `category_videogame`.`category_id` JOIN `videogames` ON `category_videogame`.`videogame_id` = `videogames`.`id` JOIN `pegi_label_videogame` ON `videogames`.`id` = `pegi_label_videogame`.`videogame_id` JOIN `pegi_labels` ON `pegi_label_videogame`.`pegi_label_id` = `pegi_labels`.`id` JOIN `reviews` ON `videogames`.`id` = `reviews`.`videogame_id` WHERE `reviews`.`rating` >= 4;
 
 7- Selezionare quali giochi erano presenti nei tornei nei quali hanno partecipato i giocatori il cui nome inizia per 'S' (474)
@@ -95,7 +96,7 @@ JOIN
 *********** BONUS ***********
 
 10- Selezionare i dati della prima software house che ha rilasciato un gioco, assieme ai dati del gioco stesso (software house id : 5)
--- 
+-- SELECT `software_houses`.*, `videogames`.* FROM `software_houses` JOIN `videogames` ON `software_houses`.`id` = `videogames`.`software_house_id` ORDER BY `videogames`.`release_date` LIMIT 1;
 
 11- Selezionare i dati del videogame (id, name, release_date, totale recensioni) con più recensioni (videogame id : potrebbe uscire 449 o 398, sono entrambi a 20)
 -- 
