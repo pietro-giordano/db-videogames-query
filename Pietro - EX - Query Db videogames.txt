@@ -99,7 +99,7 @@ NON FUNZIONANTE
 -- SELECT `software_houses`.*, `videogames`.* FROM `software_houses` JOIN `videogames` ON `software_houses`.`id` = `videogames`.`software_house_id` ORDER BY `videogames`.`release_date` LIMIT 1;
 
 11- Selezionare i dati del videogame (id, name, release_date, totale recensioni) con più recensioni (videogame id : potrebbe uscire 449 o 398, sono entrambi a 20)
--- 
+-- SELECT `videogames`.`id`, `videogames`.`name`, `videogames`.`release_date`, COUNT(`reviews`.`videogame_id`) FROM `videogames` JOIN `reviews` ON `videogames`.`id` = `reviews`.`videogame_id` GROUP BY `reviews`.`videogame_id` ORDER BY COUNT(`reviews`.`videogame_id`) DESC LIMIT 1;
 
 12- Selezionare la software house che ha vinto più premi tra il 2015 e il 2016 (software house id : potrebbe uscire 3 o 1, sono entrambi a 3)
 -- 
